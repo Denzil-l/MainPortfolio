@@ -1,0 +1,255 @@
+@import url(https://fonts.googleapis.com/css?family=Silkscreen:regular,700);
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  list-style: none;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a.a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.wrapper {
+  height: 100vh;
+  width: 100vw;
+  background: #222;
+  background: url(../img/back.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: snow;
+  letter-spacing: 2px;
+  overflow: hidden;
+  display: grid;
+  grid-template: 1fr/300px 1fr;
+  font-family: Silkscreen;
+  font-size: 20px;
+}
+
+.sidebar {
+  position: relative;
+  width: 100px;
+  height: 100%;
+  -webkit-backdrop-filter: blur(6px);
+          backdrop-filter: blur(6px);
+  display: flex;
+  transition: 0.8s;
+  flex-direction: column;
+  justify-content: space-between;
+  background: rgba(10, 10, 10, 0.65);
+  box-shadow: 0px 8px 32px rgb(2, 4, 24);
+  border-right: 2px solid rgba(255, 255, 255, 0.09);
+}
+
+.openSidebar {
+  width: 300px;
+}
+
+.BigButton {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translate(0%, -50%);
+  width: 25px;
+  height: 10%;
+  background-color: rgba(10, 10, 10, 0.65);
+  border-radius: 0px 15px 15px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  transition: 0.3s;
+}
+
+.BigButton:hover {
+  color: purple;
+}
+
+.closeSpan {
+  transition: 0.5s;
+}
+
+.openSpan {
+  transform: rotateY(180deg);
+  transition: 0.5s;
+}
+
+.sidebar .logo {
+  width: 100%;
+  height: 40%;
+  padding: 40px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sidebar .logo img {
+  padding: 5px;
+  width: 180px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.sidebar .logo .Title {
+  margin-top: 25px;
+  color: snow;
+  font-size: 16px;
+  pointer-events: none;
+  text-align: center;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.openTitle {
+  margin-top: 25px;
+  color: snow;
+  font-size: 16px;
+  pointer-events: none;
+  text-align: center;
+  transition: 0.5s;
+  transition-delay: 0.6s;
+  opacity: 1;
+}
+
+.sidebar nav {
+  height: 60%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar .nav-title {
+  height: 30px;
+  padding-left: 10px;
+  font-size: 8px;
+  text-align: center;
+}
+
+.sidebar nav ul {
+  padding: 0 0 10% 0;
+  color: white;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.sidebar nav li {
+  height: 15%;
+  width: 100%;
+  font-size: 16px;
+  padding-left: 35px;
+  cursor: pointer;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.sidebar nav li .link {
+  color: transparent;
+}
+
+.sidebar nav li .openlink {
+  color: snow;
+  transition: ease-in-out 0.5s;
+  transition-delay: 0.5s;
+}
+
+.active {
+  background: rgba(89, 15, 91, 0.4);
+}
+
+.sidebar nav li:hover {
+  background-color: rgba(128, 128, 128, 0.1);
+  letter-spacing: 5px;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-shadow: 1px 0px 14px rgb(255, 27, 255);
+}
+.page {
+  background: rgba(10, 10, 10, 0.65);
+  box-shadow: 0px 8px 32px rgb(2, 4, 24);
+  border-right: 2px solid rgba(255, 255, 255, 0.09);
+  height: 80%;
+  width: 80%;
+  padding: 5%;
+  border-radius: 15px;
+}
+
+.test {
+  width: 300px;
+  height: 200px;
+  background-color: black;
+  border-radius: 15px;
+}
+
+.TitlePage {
+  font-size: 40px;
+  text-align: center;
+}
+
+.Paragraph {
+  margin-top: 10%;
+  text-align: justify;
+}

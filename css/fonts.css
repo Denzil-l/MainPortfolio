@@ -1,0 +1,62 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?2a2v7h');
+  src:  url('../fonts/icomoon.eot?2a2v7h#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?2a2v7h') format('truetype'),
+    url('../fonts/icomoon.woff?2a2v7h') format('woff'),
+    url('../fonts/icomoon.svg?2a2v7h#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"]::before, [class*=" icon-"]::before {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-Chewbacca-icon_34502:before {
+  padding-right: 8px;
+  font-size: 26px;
+  color: white;
+  content: "\e906";
+}
+
+.icon-Death-Star-icon_34500:before {
+  padding-right: 8px;
+  font-size: 26px;
+  color: white;
+
+  content: "\e907";
+}
+.icon-R2D2-icon_34499:before {
+  padding-right: 8px;
+  font-size: 26px;
+  color: white;
+
+  content: "\e909";
+}
+.icon-scifi_starwars_at_at_icon_158239:before {
+  padding-right: 8px;
+  font-size: 26px;
+  color: white;
+
+  content: "\e90a";
+}
+.icon-Stormtrooper-icon_34497:before {
+  padding-right: 8px;
+  color: white;
+
+  font-size: 26px;
+  content: "\e90b";
+}

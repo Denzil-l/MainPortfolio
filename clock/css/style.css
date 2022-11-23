@@ -1,0 +1,155 @@
+@import url(https://fonts.googleapis.com/css?family=Silkscreen:regular,700);
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  list-style: none;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a.a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.wrapper {
+  min-height: 100%;
+  overflow: hidden;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+}
+
+.container-for-clock {
+  width: 180px;
+  height: 180px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circle {
+  position: absolute;
+  width: 40%;
+  height: 40%;
+  border: 1px solid rgba(192, 192, 192, 0.3);
+  border-radius: 50%;
+}
+
+.clock {
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(192, 192, 192, 0.3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.clock img {
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
+}
+
+.clock::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: black;
+  border-radius: 50%;
+  z-index: 6;
+}
+
+.clock__hour {
+  width: 3px;
+  height: 50%;
+  background-color: black;
+  position: absolute;
+  border-radius: 5px 5px 0px 0px;
+}
+.clock__minute {
+  width: 2px;
+  height: 60%;
+  background-color: black;
+  position: absolute;
+  border-radius: 5px 5px 0px 0px;
+}
+.clock__second {
+  width: 1px;
+  height: 70%;
+  background-color: black;
+  position: absolute;
+  border-radius: 5px 5px 0px 0px;
+}
+.clock__hour {
+  transform: rotate(0deg);
+}
+.clock__minute {
+  transform: rotate(60deg);
+}
+.clock__second {
+  transform: rotate(90deg);
+}
+.clock__hour, .clock__minute, .clock__second {
+  background: rgb(255, 255, 255);
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0) 50%, rgb(0, 0, 0) 40%);
+}
