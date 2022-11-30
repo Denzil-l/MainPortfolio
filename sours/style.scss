@@ -316,16 +316,8 @@
     transition: .3s;
   }
 
-  &__image img {
-    opacity: 0.6;
-
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+  
+  
   &__image:hover{
     filter: blur(3px);
     opacity: 0.75;
@@ -411,4 +403,46 @@
     background-color: white;
     box-shadow: 0px 0px 5px 4px rgba(25, 140, 229, 0.2);
   }
+}
+
+
+#idone{
+  opacity: 0.6;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+#idtwo{
+  opacity: 0.6;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+#idthree{
+  opacity: 0.6;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+#idfour{
+  opacity: 0.6;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
