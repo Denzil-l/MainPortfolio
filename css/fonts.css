@@ -25,30 +25,41 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+@media (min-width:300px){
+  :root {
+    --FZ: 20px;
+  }
+}
+@media (min-width:1050px){
+  :root {
+    --FZ: 26px;
+  }
+}
+
 .icon-Chewbacca-icon_34502:before {
   padding-right: 8px;
-  font-size: 26px;
+  font-size: var(--FZ);
   color: white;
   content: "\e906";
 }
 
 .icon-Death-Star-icon_34500:before {
   padding-right: 8px;
-  font-size: 26px;
+  font-size: var(--FZ);
   color: white;
 
   content: "\e907";
 }
 .icon-R2D2-icon_34499:before {
   padding-right: 8px;
-  font-size: 26px;
+  font-size: var(--FZ);
   color: white;
 
   content: "\e909";
 }
 .icon-scifi_starwars_at_at_icon_158239:before {
   padding-right: 8px;
-  font-size: 26px;
+  font-size: var(--FZ);
   color: white;
 
   content: "\e90a";
@@ -57,6 +68,6 @@
   padding-right: 8px;
   color: white;
 
-  font-size: 26px;
+  font-size: var(--FZ);
   content: "\e90b";
 }

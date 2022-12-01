@@ -1,9 +1,8 @@
 
-.container-for-clock {
+/* .container-for-clock {
   width: 90px;
   height: 90px;
-  /* width: 160px;
-  height: 160px; */
+ 
   position: relative;
   display: flex;
   align-items: center;
@@ -15,13 +14,12 @@
 
   width: 180px;
   height: 180px;
-  /* width: 160px;
-  height: 160px; */
+ 
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-}
+} */
 
 .clock {
   width: 100%;
