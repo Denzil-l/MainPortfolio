@@ -84,8 +84,8 @@ a {
 }
 
 .sidebar-container {
-  position: -webkit-sticky;
-  position: sticky;
+  position: relative;
+  z-index: 5;
 }
 
 @media (min-width: 300px) {
@@ -419,6 +419,8 @@ a {
 }
 
 .content {
+  position: relative;
+  z-index: 3;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -445,16 +447,19 @@ a {
     color: snow;
   }
 }
-@media (min-width: 300px) {
-  .grid-block {
-    background: rgba(10, 10, 10, 0.65);
-    box-shadow: 0px 8px 32px rgb(2, 4, 24);
-    width: 80%;
-    height: 80%;
-    display: grid;
-    grid-template: 1fr 1fr/1fr 1fr;
-  }
+.grid-block {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(10, 10, 10, 0.65);
+  width: 80%;
+  height: 80%;
+  display: grid;
+  transition: 0.5s;
+  grid-template: 1fr 1fr/1fr 1fr;
 }
+
 .box {
   transition: 0.3s;
   background-color: rgba(0, 0, 0, 0.7);
@@ -551,6 +556,10 @@ a {
 }
 
 .scroll-block {
+  position: absolute;
+  top: 95%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 30%;
   height: 50px;
   display: flex;
@@ -618,4 +627,32 @@ a {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+#firstgrid {
+  z-index: 3;
+}
+
+#secondgrid {
+  z-index: 3;
+}
+
+#thirdgrid {
+  z-index: 3;
+}
+
+.html {
+  color: orange;
+}
+
+.css {
+  color: blue;
+}
+
+.scss {
+  color: red;
+}
+
+.js {
+  color: yellow;
 }

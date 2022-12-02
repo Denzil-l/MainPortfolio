@@ -2,7 +2,7 @@
 
 
 
-
+const scrollBlock = document.querySelectorAll('.scroll-block__page')
 const sidebar = document.querySelector('.sidebar')
 const page = document.querySelector('.page')
 const item = document.querySelectorAll('.item')
@@ -19,7 +19,7 @@ const boxes = document.querySelectorAll('.box')
 const one = document.querySelector('.one')
 const Bottom = document.querySelectorAll('.conteiner-bottom')
 const Top = document.querySelectorAll('.conteiner-top')
-
+const Grid = document.querySelectorAll('.grid-block')
 
 function Active() {
     for (let i = 0; i < 4; i++) {
@@ -53,10 +53,6 @@ BigButton.addEventListener('click', ()=>{
     if(Button.className === 'closeSpan'){Button.className = 'openSpan'}else{Button.className = 'closeSpan'}
     
 })
-
-
-
-
 for (let i = 0; i < 4; i++) {
     boxes[i].addEventListener('mouseover', ()=>{
         console.log(Top[i])
@@ -74,6 +70,21 @@ for (let i = 0; i < 4; i++) {
         Bottom[i].style.borderTop = '0px solid rgba(255, 255, 255, 0.09)'
     })
 }
+let main = 0
+Grid.forEach((e,i)=>Grid[i].style.zIndex = '3')
+Grid[0].style.zIndex = '4'
+scrollBlock.forEach((e,i)=>{
+    scrollBlock[i].addEventListener('click', ()=>{
+        Grid.forEach((elem,index)=>{
+
+            Grid[index].style.zIndex = '3'
+            Grid[index].style.opacity = '0'
+        })
+        Grid[i].style.zIndex = '4'
+        Grid[i].style.opacity = '1'
+
+    })
+})
 
 Active()
 
