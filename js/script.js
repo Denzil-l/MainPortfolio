@@ -1,7 +1,6 @@
 
-
-
-
+const mainButtons = document.querySelectorAll('.nav-item')
+const contcacts = document.querySelectorAll('.page-three__link')
 const scrollBlock = document.querySelectorAll('.scroll-block__page')
 const sidebar = document.querySelector('.sidebar')
 const page = document.querySelector('.page')
@@ -20,12 +19,118 @@ const one = document.querySelector('.one')
 const Bottom = document.querySelectorAll('.conteiner-bottom')
 const Top = document.querySelectorAll('.conteiner-top')
 const Grid = document.querySelectorAll('.grid-block')
+let coordinates = []
 
+function Randomium(min,max){
+    let randomium = Math.floor(Math.random()*100)
+    if(randomium < min || randomium > max){randomium = Randomium(min,max)}
+    return randomium
+}
+
+function RandomRandom(defaulpropety) {
+    
+    contcacts.forEach((e,i)=>{
+        switch (true) {
+            case i === 0:
+                setTimeout(()=>{
+                    
+                
+                    coordinates[i] = [0,0]
+                    let randomiumY  =Randomium(0,33)
+                    coordinates[i][0] = randomiumY
+                    contcacts[i].style.top = `${randomiumY}%`
+                    let randomiumX = Randomium(0,16)
+                    coordinates[i][1] = randomiumX
+                    contcacts[i].style.left = `${randomiumX}%`
+                    contcacts[i].style.opacity = `1`
+                    
+                },500 + i*200)
+                break;
+            case i === 1:
+                setTimeout(()=>{
+               
+                    coordinates[i] = [0,0]
+                    let randomiumY  =Randomium(33,66)
+                    coordinates[i][0] = randomiumY
+                    contcacts[i].style.top = `${randomiumY}%`
+                    let randomiumX = Randomium(0,32)
+                    coordinates[i][1] = randomiumX
+                    contcacts[i].style.left = `${randomiumX}%`
+                    contcacts[i].style.opacity = `1`
+                    
+                    
+                },500 + i*200)
+                break;
+            case i === 2:
+                setTimeout(()=>{
+                   
+                    coordinates[i] = [0,0]
+                    let randomiumY  =Randomium(67,90)
+                    coordinates[i][0] = randomiumY
+                    contcacts[i].style.top = `${randomiumY}%`
+                    let randomiumX = Randomium(0,28)
+                    coordinates[i][1] = randomiumX
+                    contcacts[i].style.left = `${randomiumX}%`
+                    contcacts[i].style.opacity = `1`
+                    
+                   
+                    
+                },500 + i*200)
+                break;
+            case i === 3:
+                setTimeout(()=>{
+                    
+                    coordinates[i] = [0,0]
+                    let randomiumY  =Randomium(0,50)
+                    coordinates[i][0] = randomiumY
+                    contcacts[i].style.top = `${randomiumY}%`
+                    let randomiumX = Randomium(50,83)
+                    coordinates[i][1] = randomiumX
+                    contcacts[i].style.left = `${randomiumX}%`
+                    contcacts[i].style.opacity = `1`
+                    
+                },500 + i*200)
+                break;
+            case i === 4:
+
+                setTimeout(()=>{
+                    
+                    coordinates[i] = [0,0]
+                    let randomiumY  =Randomium(50,70)
+                    coordinates[i][0] = randomiumY
+                    contcacts[i].style.top = `${randomiumY}%`
+                    let randomiumX = Randomium(50,70)
+                    coordinates[i][1] = randomiumX
+                    contcacts[i].style.left = `${randomiumX}%`
+                    contcacts[i].style.opacity = `1`
+                    
+                    
+                },500 + i*200)
+                break;  
+            default:
+                break;
+        }
+        })
+}
+function RandomPosition() {
+    const defaulpropety = [[0,0],[10,0],[10,0],[10,10],[10,10]]
+
+    setTimeout(()=>{
+        RandomRandom(defaulpropety)
+    },500)
+    setInterval(()=>{
+    RandomRandom(defaulpropety)
+    },5000)
+}
+
+
+
+mainButtons[2].addEventListener('click', RandomPosition)
 function Active() {
     for (let i = 0; i < 4; i++) {
     
         Li[i].addEventListener('click', ()=>{
-            console.log(i)
+            // console.log(i)
             for (let j = 0; j < 4; j++) {
                 Li[j].classList.remove('active')
     
@@ -87,5 +192,4 @@ scrollBlock.forEach((e,i)=>{
 })
 
 Active()
-
    
