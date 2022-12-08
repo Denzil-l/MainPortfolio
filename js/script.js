@@ -1,6 +1,9 @@
 
 const mainButtons = document.querySelectorAll('.nav-item')
+const hexagon1 = document.querySelector('.hexone')
+const hexagon2 = document.querySelector('.hextwo')
 const contcacts = document.querySelectorAll('.page-three__link')
+const stacks = document.querySelectorAll('.page-four__stacks')
 const scrollBlock = document.querySelectorAll('.scroll-block__page')
 const sidebar = document.querySelector('.sidebar')
 const page = document.querySelector('.page')
@@ -21,119 +24,55 @@ const Top = document.querySelectorAll('.conteiner-top')
 const Grid = document.querySelectorAll('.grid-block')
 let coordinates = []
 
-function Randomium(min,max){
-    let randomium = Math.floor(Math.random()*100)
-    if(randomium < min || randomium > max){randomium = Randomium(min,max)}
-    return randomium
-}
+function NewOpacity(items) {
+    console.log('xxx')
+    const defaulpropety = [[15,50],[33,20],[66,20],[85,50],[66,80],[33,80]]
 
-function RandomRandom(defaulpropety) {
-    
-    contcacts.forEach((e,i)=>{
-        switch (true) {
-            case i === 0:
-                setTimeout(()=>{
-                    
-                
-                    coordinates[i] = [0,0]
-                    let randomiumY  =Randomium(0,33)
-                    coordinates[i][0] = randomiumY
-                    contcacts[i].style.top = `${randomiumY}%`
-                    let randomiumX = Randomium(0,16)
-                    coordinates[i][1] = randomiumX
-                    contcacts[i].style.left = `${randomiumX}%`
-                    contcacts[i].style.opacity = `1`
-                    
-                },500 + i*200)
-                break;
-            case i === 1:
-                setTimeout(()=>{
-               
-                    coordinates[i] = [0,0]
-                    let randomiumY  =Randomium(33,66)
-                    coordinates[i][0] = randomiumY
-                    contcacts[i].style.top = `${randomiumY}%`
-                    let randomiumX = Randomium(0,32)
-                    coordinates[i][1] = randomiumX
-                    contcacts[i].style.left = `${randomiumX}%`
-                    contcacts[i].style.opacity = `1`
-                    
-                    
-                },500 + i*200)
-                break;
-            case i === 2:
-                setTimeout(()=>{
-                   
-                    coordinates[i] = [0,0]
-                    let randomiumY  =Randomium(67,90)
-                    coordinates[i][0] = randomiumY
-                    contcacts[i].style.top = `${randomiumY}%`
-                    let randomiumX = Randomium(0,28)
-                    coordinates[i][1] = randomiumX
-                    contcacts[i].style.left = `${randomiumX}%`
-                    contcacts[i].style.opacity = `1`
-                    
-                   
-                    
-                },500 + i*200)
-                break;
-            case i === 3:
-                setTimeout(()=>{
-                    
-                    coordinates[i] = [0,0]
-                    let randomiumY  =Randomium(0,50)
-                    coordinates[i][0] = randomiumY
-                    contcacts[i].style.top = `${randomiumY}%`
-                    let randomiumX = Randomium(50,83)
-                    coordinates[i][1] = randomiumX
-                    contcacts[i].style.left = `${randomiumX}%`
-                    contcacts[i].style.opacity = `1`
-                    
-                },500 + i*200)
-                break;
-            case i === 4:
-
-                setTimeout(()=>{
-                    
-                    coordinates[i] = [0,0]
-                    let randomiumY  =Randomium(50,70)
-                    coordinates[i][0] = randomiumY
-                    contcacts[i].style.top = `${randomiumY}%`
-                    let randomiumX = Randomium(50,70)
-                    coordinates[i][1] = randomiumX
-                    contcacts[i].style.left = `${randomiumX}%`
-                    contcacts[i].style.opacity = `1`
-                    
-                    
-                },500 + i*200)
-                break;  
-            default:
-                break;
-        }
-        })
-}
-function RandomPosition() {
-    const defaulpropety = [[0,0],[10,0],[10,0],[10,10],[10,10]]
-
-    setTimeout(()=>{
-        RandomRandom(defaulpropety)
-    },500)
+    items.forEach((e, i) => {
+        setTimeout(() => {
+            items[i].style.opacity = '1'
+        }, 500 + i * 200)
+    })
+  
+    let j = 1
+   
     setInterval(()=>{
-    RandomRandom(defaulpropety)
+        let y = 0
+
+        for (let i = 0; i < 6; i++) {
+            if (i < 6 - j) {
+                items[i].style.top = `${defaulpropety[i+j][0]}%`
+                items[i].style.left = `${defaulpropety[i+j][1]}%`
+            }else{
+                items[i].style.top = `${defaulpropety[y][0]}%`
+                items[i].style.left = `${defaulpropety[y][1]}%`
+                y++
+            }
+              
+            
+        }
+        if (j === 6) {
+           j = 1 
+        }else{
+            j++
+
+        }
+
     },5000)
+   
 }
-
-
-
-mainButtons[2].addEventListener('click', RandomPosition)
+hexagon1.addEventListener('click', ()=>{
+    NewOpacity(contcacts)
+})
+hexagon2.addEventListener('click', ()=>{
+    NewOpacity(stacks)
+})
 function Active() {
     for (let i = 0; i < 4; i++) {
     
         Li[i].addEventListener('click', ()=>{
-            // console.log(i)
             for (let j = 0; j < 4; j++) {
                 Li[j].classList.remove('active')
-    
             }
             Li[i].classList.add('active')
         })

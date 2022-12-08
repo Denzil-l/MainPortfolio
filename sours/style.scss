@@ -252,14 +252,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  // padding-bottom: 130%;
 }
-
-// .sidebar .logo img {
-//   padding: 5px;
-//   width: 180px;
-//   object-fit: contain;
-// }
 
 .sidebar .logo .Title {
   margin-top: 25px;
@@ -271,16 +264,6 @@ a {
   transition: .3s;
 }
 
-// .openTitle {
-//   margin-top: 25px;
-//   color: snow;
-//   @include adaptiv-font(22, 14);
-//   pointer-events: none;
-//   text-align: center;
-//   transition: .5s;
-//   transition-delay: .6s;
-//   opacity: 1;
-// }
 
 //================================NAV======================
 
@@ -308,18 +291,6 @@ a {
   justify-content: space-around;
 }
 
-// .sidebar nav li {
-//   height: 15%;
-//   width: 100%;
-//   @include adaptiv-font(10, 6);
-//   padding-left: 35px;
-//   cursor: pointer;
-//   transition: .3s;
-//   display: flex;
-//   align-items: center;
-//   justify-content: flex-start;
-
-// }
 
 .sidebar nav li .link {
   color: transparent;
@@ -379,7 +350,6 @@ a {
     left: 50%;
     transform: translate(-50%, -50%);
     background: rgba(10, 10, 10, 0.65);
-    // box-shadow: 0px 8px 32px rgb(2, 4, 24);
     width: 80%;
     height: 80%;
     display: grid;
@@ -595,7 +565,7 @@ a {
 
 
 
-.page-three {
+.page-three{
 &__main-block {
   position: absolute;
   top: 50%;
@@ -606,35 +576,20 @@ a {
   background: rgba(10, 10, 10, 0.65);
   border: 2px solid rgba(255, 255, 255, 0.09);
   display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 15px;
 }
-// &__main-block {
-//   position: absolute;
-//   top: 50%;
-//   left: 50%;
-//   transform: translate(-50%,-50%);
-//   width: 90%;
-//   height: 90%;
-//   // background: rgba(10, 10, 10, 0.65);
-//   // border: 2px solid rgba(255, 255, 255, 0.09);
-//   display: grid;
-//   grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;
-//   grid-template-areas:
-//   'item1 item1 item3'
-//   'item4 item4 item3'
-//   'item2 item5 item5'
-//   ;
-//   padding: 15px;
-// }
+
 
 
 &__link {
     @include adaptiv-font2(20, 12);
-
+  transform: translate(-50%, -50%);
   padding: 0px 25px;
   height: 70px;
   opacity: 0;
-  transition: 1s;
+  transition: 1.5s;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -643,7 +598,8 @@ a {
   border: 2px solid rgba(255, 255, 255, 0.09);
 }
 &__link:hover {
-   color: red;
+   backdrop-filter: blur(3px);
+  color: rgb(101, 101, 244);
 }
 &__link img {
    width: 100%;
@@ -651,20 +607,140 @@ a {
    object-fit: contain;
    opacity: 0.7;
 }
-&__link:last-child{
-  width: 200px;
-  height: 200px;
-  padding: 10px;
+
+
+  &__link:nth-child(2){width: 190px;  height: 190px;  padding: 10px;}
+  &__link:nth-child(5){width: 190px;  height: 190px;  padding: 10px;}
+
+@media(max-width:1050px){
+  &__link:nth-child(2){width: 170px;  height: 170px;  padding: 10px;}
+  &__link:nth-child(5){width: 170px;  height: 170px;  padding: 10px;}
 }
+@media(max-width:1000px){
+  &__link:nth-child(2){width: 150px;  height: 150px;  padding: 10px;}
+  &__link:nth-child(5){width: 150px;  height: 150px;  padding: 10px;}
 }
-// .sect{position: relative; background: rgba(10, 10, 10, 0.65);
-//   border: 2px solid rgba(255, 255, 255, 0.09);}
-// .sect:nth-child(1){grid-area: item1; display: flex; align-items: center; justify-content: center;}
-// .sect:nth-child(2){grid-area: item2; display: flex; align-items: center; justify-content: center;}
-// .sect:nth-child(3){grid-area: item3; display: flex; align-items: center; justify-content: center;}
-// .sect:nth-child(4){grid-area: item4; display: flex; align-items: center; justify-content: center;}
-// .sect:nth-child(5){grid-area: item5; display: flex; align-items: center; justify-content: center;}
-.block-line{
-  width: 1px;
-  
+&__link:nth-child(1){top: 10%; left: 50%;}
+&__link:nth-child(2){top: 33%; left: 20%;}
+&__link:nth-child(3){top: 66%; left: 20%;}
+&__link:nth-child(4){top: 80%; left: 50%;}
+&__link:nth-child(5){top: 66%; left: 80%;}
+&__link:nth-child(6){top: 33%; left: 80%;}
+}
+
+.me{
+  cursor: pointer;
+  font-size: 30px;
+  text-align: center;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  border: 4px dashed rgba(255, 255, 255, 0.39);
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: .6s;
+}
+.me:hover{
+  backdrop-filter: blur(3px);
+
+}
+
+
+
+
+.hexagon {
+  cursor: pointer;
+  width: 90px;
+  height: 50px;
+  position: relative;
+  z-index: 3;
+  background: rgba(10, 10, 10, 0.65);
+  border-right: 2px solid rgba(255, 255, 255, 0.09);
+  border-left: 2px solid rgba(255, 255, 255, 0.09);
+
+  h2{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 4;
+    text-align: center;
+  }
+}
+@media (min-width: 650px){
+  .hexagon {width: 90px;height: 51px;}
+  h2{    @include adaptiv-font(16, 6);  }
+}
+@media (min-width: 950px){
+  .hexagon {width: 160px;height: 91px;}
+  h2{    @include adaptiv-font(22, 6);  }
+}
+@media (min-width: 1150px){
+  .hexagon {width: 200px;height: 114px;}
+  h2{    @include adaptiv-font(28, 18);  }
+
+}
+.hexagon:before, 
+.hexagon:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(10, 10, 10, 0.65);
+  border-right: 2px solid rgba(255, 255, 255, 0.09);
+  border-left: 2px solid rgba(255, 255, 255, 0.09);
+}
+
+.hexagon:before {
+  transform: rotate(60deg);
+}
+
+.hexagon:after {
+  transform: rotate(-60deg);
+}
+.hexagon:hover{
+}
+
+.page-four {
+  &__main-block {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 90%;
+    height: 90%;
+    background: rgba(10, 10, 10, 0.65);
+    border: 2px solid rgba(255, 255, 255, 0.09);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__stacks{
+    width: 130px;
+    height: 130px;
+    overflow: hidden;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    transition: 1.5s;
+    opacity: 0;
+  }
+  &__stacks img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  } 
+&__stacks:nth-child(1){top: 15%; left: 50%;}
+&__stacks:nth-child(2){top: 33%; left: 20%;}
+&__stacks:nth-child(3){top: 66%; left: 20%;}
+&__stacks:nth-child(4){top: 85%; left: 50%;}
+&__stacks:nth-child(5){top: 66%; left: 80%;}
+&__stacks:nth-child(6){top: 33%; left: 80%;}
 }
