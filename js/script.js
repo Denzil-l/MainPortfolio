@@ -6,7 +6,7 @@ const contcacts = document.querySelectorAll('.page-three__link')
 const stacks = document.querySelectorAll('.page-four__stacks')
 const scrollBlock = document.querySelectorAll('.scroll-block__page')
 const sidebar = document.querySelector('.sidebar')
-const page = document.querySelector('.page')
+const page = document.querySelectorAll('.page')
 const item = document.querySelectorAll('.item')
 const itemH3 = document.querySelectorAll('.item h3')
 const itemH4 = document.querySelectorAll('.item h4')
@@ -23,6 +23,36 @@ const Bottom = document.querySelectorAll('.conteiner-bottom')
 const Top = document.querySelectorAll('.conteiner-top')
 const Grid = document.querySelectorAll('.grid-block')
 let coordinates = []
+
+function ChangePage(){
+    mainButtons.forEach((e,i)=>{
+        mainButtons[i].addEventListener('click', ()=>{
+            page.forEach((elem,index) =>{
+                page[index].style.display = 'none'
+            })
+            page[i].style.display = 'block'
+        })
+
+        switch (true) {
+            case i === 0:
+                
+                break;
+            case i === 1:
+                
+                break;
+            case i === 2:
+                NewOpacity(contcacts)
+                break;
+            case i === 3:
+                NewOpacity(stacks)
+                break;
+        
+            default:
+                break;
+        }
+
+    })
+}
 
 function NewOpacity(items) {
     console.log('xxx')
@@ -61,12 +91,12 @@ function NewOpacity(items) {
     },5000)
    
 }
-hexagon1.addEventListener('click', ()=>{
-    NewOpacity(contcacts)
-})
-hexagon2.addEventListener('click', ()=>{
-    NewOpacity(stacks)
-})
+// hexagon1.addEventListener('click', ()=>{
+//     NewOpacity(contcacts)
+// })
+// hexagon2.addEventListener('click', ()=>{
+//     NewOpacity(stacks)
+// })
 function Active() {
     for (let i = 0; i < 4; i++) {
     
@@ -131,4 +161,4 @@ scrollBlock.forEach((e,i)=>{
 })
 
 Active()
-   
+ChangePage()

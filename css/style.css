@@ -662,6 +662,7 @@ a {
   height: 100%;
   position: absolute;
   z-index: 3;
+  transition: 1s;
 }
 
 #page-one {
@@ -673,7 +674,7 @@ a {
 }
 
 #page-three {
-  display: block;
+  display: none;
 }
 
 #page-four {

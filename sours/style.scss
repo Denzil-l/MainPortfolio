@@ -530,10 +530,11 @@ a {
   height: 100%;
   position: absolute;
   z-index: 3;
+  transition: 1s;
 }
 #page-one{display: none;}
 #page-two{display: none;}
-#page-three{display: block;}
+#page-three{display: none;}
 #page-four{display: none;}
 
 
