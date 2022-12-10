@@ -25,15 +25,26 @@ const Grid = document.querySelectorAll('.grid-block')
 let coordinates = []
 
 function ChangePage(){
+    let current = 0
     mainButtons.forEach((e,i)=>{
         mainButtons[i].addEventListener('click', ()=>{
             page.forEach((elem,index) =>{
-                page[index].style.display = 'none'
+                page[current].style.animationDelay = '0s'
+                page[current].style.animationName = 'anim4'
+                setTimeout(()=>{
+                    page[current].style.display = 'none'
+                },300)
                 if (index === 0) {
                     page[0].style.animationDelay = '0.3s'
                 }
             })
-            page[i].style.display = 'block'
+            setTimeout(()=>{
+                page[i].style.display = 'block'
+                page[i].style.animationName = 'anim3'
+                page[i].style.animationDelay = '0.3s'
+            }, 300)
+            current = i
+            
         })
 
         switch (true) {
@@ -94,12 +105,7 @@ function NewOpacity(items) {
     },5000)
    
 }
-// hexagon1.addEventListener('click', ()=>{
-//     NewOpacity(contcacts)
-// })
-// hexagon2.addEventListener('click', ()=>{
-//     NewOpacity(stacks)
-// })
+
 function Active() {
     for (let i = 0; i < 4; i++) {
     
@@ -165,3 +171,9 @@ scrollBlock.forEach((e,i)=>{
 
 Active()
 ChangePage()
+
+
+// mainButtons[1].addEventListener('click', ()=>{
+//     page[0].style.animationDelay = '0s'
+//     page[0].style.animationName = 'anim4'
+// })

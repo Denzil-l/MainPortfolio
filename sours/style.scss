@@ -260,13 +260,17 @@ a {
   transition: 1s;
 }
 #page-one{display: block; animation: anim3 0.3s linear 1s 1  forwards; opacity: 0;}
-#page-two{display: none; animation: anim3 0.3s linear 0.3s 1  forwards; opacity: 0;}
-#page-three{display: none; animation: anim3 0.3s linear 0.3s 1  forwards; opacity: 0;}
-#page-four{display: none; animation: anim3 0.3s linear 0.3s 1  forwards; opacity: 0;}
+#page-two{display: none; animation: animx 0.3s linear 0.3s 1  forwards; opacity: 0;}
+#page-three{display: none; animation: animx 0.3s linear 0.3s 1  forwards; opacity: 0;}
+#page-four{display: none; animation: animx 0.3s linear 0.3s 1  forwards; opacity: 0;}
 
 @keyframes anim3{
   0%{opacity: 0;}
   100%{opacity: 1;}
+}
+@keyframes anim4{
+  0%{opacity: 1;}
+  100%{opacity: 0;}
 }
 
 .page-three{

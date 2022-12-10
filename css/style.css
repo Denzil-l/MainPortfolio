@@ -652,22 +652,22 @@ a {
 
 #page-two {
   display: none;
-  -webkit-animation: anim3 0.3s linear 0.3s 1 forwards;
-          animation: anim3 0.3s linear 0.3s 1 forwards;
+  -webkit-animation: animx 0.3s linear 0.3s 1 forwards;
+          animation: animx 0.3s linear 0.3s 1 forwards;
   opacity: 0;
 }
 
 #page-three {
   display: none;
-  -webkit-animation: anim3 0.3s linear 0.3s 1 forwards;
-          animation: anim3 0.3s linear 0.3s 1 forwards;
+  -webkit-animation: animx 0.3s linear 0.3s 1 forwards;
+          animation: animx 0.3s linear 0.3s 1 forwards;
   opacity: 0;
 }
 
 #page-four {
   display: none;
-  -webkit-animation: anim3 0.3s linear 0.3s 1 forwards;
-          animation: anim3 0.3s linear 0.3s 1 forwards;
+  -webkit-animation: animx 0.3s linear 0.3s 1 forwards;
+          animation: animx 0.3s linear 0.3s 1 forwards;
   opacity: 0;
 }
 
@@ -686,6 +686,22 @@ a {
   }
   100% {
     opacity: 1;
+  }
+}
+@-webkit-keyframes anim4 {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes anim4 {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
 .page-three__main-block {
