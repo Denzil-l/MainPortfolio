@@ -29,13 +29,16 @@ function ChangePage(){
         mainButtons[i].addEventListener('click', ()=>{
             page.forEach((elem,index) =>{
                 page[index].style.display = 'none'
+                if (index === 0) {
+                    page[0].style.animationDelay = '0.3s'
+                }
             })
             page[i].style.display = 'block'
         })
 
         switch (true) {
             case i === 0:
-                
+
                 break;
             case i === 1:
                 

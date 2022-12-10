@@ -1,0 +1,302 @@
+
+$maxWidth: 1920;
+@mixin adaptiv-font($pcSize, $mobSize){
+  $addSize: $pcSize - $mobSize;
+  $addMobSize: $addSize + $addSize * 0.7;
+  
+  @media (max-width: 767px){
+    font-size: calc(#{$mobSize + px} + #{$addSize} *((100vw - 320px) / #{$maxWidth}));
+  }
+  @media (min-width: 767px){
+    font-size: calc(#{$mobSize + px} + #{$addMobSize} *(100vw / #{$maxWidth}));
+  }
+}
+@mixin adaptiv-font2($pcSize, $mobSize){
+  $addSize: $pcSize - $mobSize;
+  $addMobSize: $addSize;
+  
+
+  @media (min-width: 300px){
+    font-size: calc(#{$mobSize + px} + #{$addMobSize} *(100vw / #{$maxWidth}));
+  }
+}
+//================================SIDEBAR======================
+.sidebar-container {
+  position: relative;
+  z-index: 5;
+}
+
+
+@media (min-width: 300px){
+  .sidebar {
+    width: 100px;
+    height: 100vh;
+    backdrop-filter: blur(6px);
+    display: flex;
+    transition: .8s;
+    flex-direction: column;
+    justify-content: space-between;
+    background: rgba(10, 10, 10, 0.65);
+    box-shadow: 0px 8px 32px rgb(2, 4, 24);
+    border-right: 2px solid rgba(255, 255, 255, 0.09);
+  }
+  
+  .openSidebar {
+    width: 200px;
+  }
+  .sidebar nav li {
+    height: 15%;
+    width: 100%;
+    @include adaptiv-font(16, 8);
+    padding-left: 35px;
+    cursor: pointer;
+    transition: .3s;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  
+  }
+
+  .sidebar .logo img {
+    padding: 5px;
+    width: 140px;
+    object-fit: contain;
+  }
+  
+  .container-for-clock {
+    width: 70px;
+    height: 70px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 1s;
+  }
+  .container-for-clock-open{
+    transition: 1s;
+  
+    width: 140px;
+    height: 140px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .openTitle {
+    margin-top: 25px;
+    color: snow;
+    @include adaptiv-font(18, 9);
+    pointer-events: none;
+    text-align: center;
+    transition: .5s;
+    transition-delay: .6s;
+    opacity: 1;
+  }
+  .sidebar nav li {
+    height: 15%;
+    width: 100%;
+    @include adaptiv-font(10, 6);
+    padding-left: 38px;
+    cursor: pointer;
+    transition: .3s;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  
+  }
+}
+@media (min-width: 1050px){
+  .sidebar {
+    width: 100px;
+    height: 100vh;
+    backdrop-filter: blur(6px);
+    display: flex;
+    transition: .8s;
+    flex-direction: column;
+    justify-content: space-between;
+    background: rgba(10, 10, 10, 0.65);
+    box-shadow: 0px 8px 32px rgb(2, 4, 24);
+    border-right: 2px solid rgba(255, 255, 255, 0.09);
+  }
+  
+  .openSidebar {
+    width: 300px;
+  }
+  .sidebar nav li {
+    height: 15%;
+    width: 100%;
+    @include adaptiv-font(20, 10);
+    padding-left: 35px;
+    cursor: pointer;
+    transition: .3s;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  
+  }
+
+  .sidebar .logo img {
+    padding: 5px;
+    width: 180px;
+    object-fit: contain;
+  }
+  
+  .container-for-clock {
+    width: 90px;
+    height: 90px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 1s;
+  }
+  .container-for-clock-open{
+    transition: 1s;
+  
+    width: 180px;
+    height: 180px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .openTitle {
+    margin-top: 25px;
+    color: snow;
+    @include adaptiv-font(20, 10);
+    pointer-events: none;
+    text-align: center;
+    transition: .5s;
+    transition-delay: .6s;
+    opacity: 1;
+  }
+  .sidebar nav li {
+    height: 15%;
+    width: 100%;
+    @include adaptiv-font(16, 8);
+    padding-left: 35px;
+    cursor: pointer;
+    transition: .3s;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  
+  }
+}
+
+
+
+//================================BUTTON======================
+.BigButton {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translate(0%, -50%);
+  width: 25px;
+  height: 10%;
+  background-color: rgba(10, 10, 10, 0.65);
+  border-radius: 0px 15px 15px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  transition: .3s;
+}
+
+.BigButton:hover {
+  color: purple;
+}
+
+.closeSpan {
+  transition: .5s;
+}
+
+.openSpan {
+  transform: rotateY(180deg);
+  transition: .5s;
+}
+
+//================================LOGO======================
+.sidebar .logo {
+  width: 100%;
+  height: 40%;
+  padding: 40px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sidebar .logo .Title {
+  margin-top: 25px;
+  color: snow;
+  font-size: 16px;
+  pointer-events: none;
+  text-align: center;
+  opacity: 0;
+  transition: .3s;
+}
+
+
+//================================NAV======================
+
+.sidebar nav {
+  height: 60%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar .nav-title {
+  height: 30px;
+  padding-left: 10px;
+  @include adaptiv-font(8, 4);
+  text-align: center;
+  
+}
+
+.sidebar nav ul {
+  padding: 0 0 10% 0;
+  color: white;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+
+.sidebar nav li .link {
+  color: transparent;
+  display: none;
+}
+
+.sidebar nav li .openlink {
+  display: flex;
+  color: transparent;
+  animation: openlinks;
+  animation-delay: 1s;
+  animation-duration: 500ms;
+  animation-fill-mode: forwards;
+
+}
+
+.active {
+  background: rgba(89, 15, 91, 0.4);
+
+}
+.sidebar nav li:hover {
+  background-color: rgba($color: gray, $alpha: 0.1);
+  letter-spacing: 5px;
+}
+
+
+@keyframes openlinks {
+    0% {
+      color: transparent;
+    }
+  
+    100% {
+      color: snow;
+    }
+  }
+  

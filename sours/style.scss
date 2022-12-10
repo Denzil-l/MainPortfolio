@@ -1,4 +1,5 @@
 @import "nullstyle.scss";
+@import "sidebar.scss";
 @import url(https://fonts.googleapis.com/css?family=Silkscreen:regular,700);
 
 
@@ -18,16 +19,14 @@ $maxWidth: 1920;
   $addSize: $pcSize - $mobSize;
   $addMobSize: $addSize;
   
-  // @media (max-width: 767px){
-  //   font-size: calc(#{$mobSize + px} + #{$addSize} *((100vw - 320px) / #{$maxWidth}));
-  // }
+
   @media (min-width: 300px){
     font-size: calc(#{$mobSize + px} + #{$addMobSize} *(100vw / #{$maxWidth}));
   }
 }
 a {
-  color: inherit; /* blue colors for links too */
-  text-decoration: inherit; /* no underline */
+  color: inherit; 
+  text-decoration: inherit; 
 }
 
 .wrapper {
@@ -47,275 +46,6 @@ a {
   font-size: 20px;
 }
 
-//================================SIDEBAR======================
-.sidebar-container {
-  position: relative;
-  z-index: 5;
-}
-
-
-@media (min-width: 300px){
-  .sidebar {
-    width: 100px;
-    height: 100vh;
-    backdrop-filter: blur(6px);
-    display: flex;
-    transition: .8s;
-    flex-direction: column;
-    justify-content: space-between;
-    background: rgba(10, 10, 10, 0.65);
-    box-shadow: 0px 8px 32px rgb(2, 4, 24);
-    border-right: 2px solid rgba(255, 255, 255, 0.09);
-  }
-  
-  .openSidebar {
-    width: 200px;
-  }
-  .sidebar nav li {
-    height: 15%;
-    width: 100%;
-    @include adaptiv-font(16, 8);
-    padding-left: 35px;
-    cursor: pointer;
-    transition: .3s;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-  
-  }
-
-  .sidebar .logo img {
-    padding: 5px;
-    width: 140px;
-    object-fit: contain;
-  }
-  
-  .container-for-clock {
-    width: 70px;
-    height: 70px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: 1s;
-  }
-  .container-for-clock-open{
-    transition: 1s;
-  
-    width: 140px;
-    height: 140px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .openTitle {
-    margin-top: 25px;
-    color: snow;
-    @include adaptiv-font(18, 9);
-    pointer-events: none;
-    text-align: center;
-    transition: .5s;
-    transition-delay: .6s;
-    opacity: 1;
-  }
-  .sidebar nav li {
-    height: 15%;
-    width: 100%;
-    @include adaptiv-font(10, 6);
-    padding-left: 38px;
-    cursor: pointer;
-    transition: .3s;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-  
-  }
-}
-@media (min-width: 1050px){
-  .sidebar {
-    width: 100px;
-    height: 100vh;
-    backdrop-filter: blur(6px);
-    display: flex;
-    transition: .8s;
-    flex-direction: column;
-    justify-content: space-between;
-    background: rgba(10, 10, 10, 0.65);
-    box-shadow: 0px 8px 32px rgb(2, 4, 24);
-    border-right: 2px solid rgba(255, 255, 255, 0.09);
-  }
-  
-  .openSidebar {
-    width: 300px;
-  }
-  .sidebar nav li {
-    height: 15%;
-    width: 100%;
-    @include adaptiv-font(20, 10);
-    padding-left: 35px;
-    cursor: pointer;
-    transition: .3s;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-  
-  }
-
-  .sidebar .logo img {
-    padding: 5px;
-    width: 180px;
-    object-fit: contain;
-  }
-  
-  .container-for-clock {
-    width: 90px;
-    height: 90px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: 1s;
-  }
-  .container-for-clock-open{
-    transition: 1s;
-  
-    width: 180px;
-    height: 180px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .openTitle {
-    margin-top: 25px;
-    color: snow;
-    @include adaptiv-font(20, 10);
-    pointer-events: none;
-    text-align: center;
-    transition: .5s;
-    transition-delay: .6s;
-    opacity: 1;
-  }
-  .sidebar nav li {
-    height: 15%;
-    width: 100%;
-    @include adaptiv-font(16, 8);
-    padding-left: 35px;
-    cursor: pointer;
-    transition: .3s;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-  
-  }
-}
-
-
-
-//================================BUTTON======================
-.BigButton {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  left: 100%;
-  transform: translate(0%, -50%);
-  width: 25px;
-  height: 10%;
-  background-color: rgba(10, 10, 10, 0.65);
-  border-radius: 0px 15px 15px 0px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 30px;
-  transition: .3s;
-}
-
-.BigButton:hover {
-  color: purple;
-}
-
-.closeSpan {
-  transition: .5s;
-}
-
-.openSpan {
-  transform: rotateY(180deg);
-  transition: .5s;
-}
-
-//================================LOGO======================
-.sidebar .logo {
-  width: 100%;
-  height: 40%;
-  padding: 40px 0px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.sidebar .logo .Title {
-  margin-top: 25px;
-  color: snow;
-  font-size: 16px;
-  pointer-events: none;
-  text-align: center;
-  opacity: 0;
-  transition: .3s;
-}
-
-
-//================================NAV======================
-
-.sidebar nav {
-  height: 60%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.sidebar .nav-title {
-  height: 30px;
-  padding-left: 10px;
-  @include adaptiv-font(8, 4);
-  text-align: center;
-  
-}
-
-.sidebar nav ul {
-  padding: 0 0 10% 0;
-  color: white;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-}
-
-
-.sidebar nav li .link {
-  color: transparent;
-  display: none;
-}
-
-.sidebar nav li .openlink {
-  display: flex;
-  color: transparent;
-  animation: openlinks;
-  animation-delay: 1s;
-  animation-duration: 500ms;
-  animation-fill-mode: forwards;
-
-}
-
-.active {
-  background: rgba(89, 15, 91, 0.4);
-
-}
-.sidebar nav li:hover {
-  background-color: rgba($color: gray, $alpha: 0.1);
-  letter-spacing: 5px;
-}
-
 
 
 
@@ -331,18 +61,10 @@ a {
   width: 100%;
   color: white;
 }
-@keyframes openlinks {
-  0% {
-    color: transparent;
-  }
-
-  100% {
-    color: snow;
-  }
-}
 
 
 
+#page-two{
 
   .grid-block {
     position: absolute;
@@ -360,8 +82,7 @@ a {
   }
 
 
-
-
+  
 .box {
   transition: .3s;
   background-color: rgba($color: black, $alpha: 0.7);
@@ -444,6 +165,7 @@ a {
   }
 }
 
+
 .scroll-block{
   position: absolute;
   top: 95%;
@@ -516,14 +238,19 @@ a {
     object-fit: cover;
 }
 
+
+}
+  
+
+
+
+
+
+
 #firstgrid{z-index: 3;}
 #secondgrid{z-index: 3;}
 #thirdgrid{z-index: 3;}
 
-.html{color: orange;}
-.css{color: blue;}
-.scss{color: red;}
-.js{color: yellow;}
 
 .page{
   width: 100%;
@@ -532,42 +259,20 @@ a {
   z-index: 3;
   transition: 1s;
 }
-#page-one{display: none;}
-#page-two{display: none;}
-#page-three{display: none;}
-#page-four{display: none;}
+#page-one{display: block; animation: anim3 0.3s linear 1s 1  forwards; opacity: 0;}
+#page-two{display: none; animation: anim3 0.3s linear 0.3s 1  forwards; opacity: 0;}
+#page-three{display: none; animation: anim3 0.3s linear 0.3s 1  forwards; opacity: 0;}
+#page-four{display: none; animation: anim3 0.3s linear 0.3s 1  forwards; opacity: 0;}
 
-
-
-.page-one {
-
-&__main-block {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  width: 80%;
-  height: 80%;
-  background: rgba(10, 10, 10, 0.65);
-  border: 2px solid rgba(255, 255, 255, 0.09);
-  // @include adaptiv-font(30, 12)
-  // font-size: 26px;
-  padding: 15px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+@keyframes anim3{
+  0%{opacity: 0;}
+  100%{opacity: 1;}
 }
-
-&__Title {text-align: center; font-size: 35px;}
-
-&__paragraph {margin-top: 50px; text-align: justify;   @include adaptiv-font(22, 2);
-}
-}
-
-
 
 .page-three{
 &__main-block {
+  backdrop-filter: blur(2px);
+
   position: absolute;
   top: 50%;
   left: 50%;
@@ -582,6 +287,71 @@ a {
   padding: 15px;
 }
 
+
+
+&__link {
+    @include adaptiv-font2(20, 12);
+  transform: translate(-50%, -50%);
+  padding: 0px 25px;
+  height: 70px;
+  opacity: 0;
+  transition: 1.5s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  background: rgba(10, 10, 10, 0.65);
+  border: 2px solid rgba(255, 255, 255, 0.09);
+}
+&__link:hover {
+   backdrop-filter: blur(3px);
+  color: rgb(101, 101, 244);
+}
+&__link img {
+   width: 100%;
+   height: 100%;
+   object-fit: contain;
+   opacity: 0.7;
+}
+
+
+  &__link:nth-child(2){width: 190px;  height: 190px;  padding: 10px;}
+  &__link:nth-child(5){width: 190px;  height: 190px;  padding: 10px;}
+
+@media(max-width:1050px){
+  &__link:nth-child(2){width: 170px;  height: 170px;  padding: 10px;}
+  &__link:nth-child(5){width: 170px;  height: 170px;  padding: 10px;}
+}
+@media(max-width:1000px){
+  &__link:nth-child(2){width: 150px;  height: 150px;  padding: 10px;}
+  &__link:nth-child(5){width: 150px;  height: 150px;  padding: 10px;}
+}
+&__link:nth-child(1){top: 10%; left: 50%;}
+&__link:nth-child(2){top: 33%; left: 20%;}
+&__link:nth-child(3){top: 66%; left: 20%;}
+&__link:nth-child(4){top: 80%; left: 50%;}
+&__link:nth-child(5){top: 66%; left: 80%;}
+&__link:nth-child(6){top: 33%; left: 80%;}
+}
+.page-one{
+&__main-block {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 90%;
+  height: 90%;
+  background: rgba(10, 10, 10, 0.65);
+  border: 2px solid rgba(255, 255, 255, 0.09);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  h1{ @include adaptiv-font(30, 10); padding: 0px 10%; margin-top: 100px;}
+  p{margin-top: 50px; @include adaptiv-font(20, 10);padding: 0px 5%;}
+  backdrop-filter: blur(2px);
+  padding: 15px;
+}
 
 
 &__link {
@@ -683,7 +453,7 @@ a {
 }
 @media (min-width: 1150px){
   .hexagon {width: 200px;height: 114px;}
-  h2{    @include adaptiv-font(28, 18);  }
+  h2{    @include adaptiv-font(24, 18);  }
 
 }
 .hexagon:before, 
@@ -720,6 +490,7 @@ a {
     background: rgba(10, 10, 10, 0.65);
     border: 2px solid rgba(255, 255, 255, 0.09);
     display: flex;
+    backdrop-filter: blur(2px);
     align-items: center;
     justify-content: center;
   }
