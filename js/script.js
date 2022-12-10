@@ -32,7 +32,7 @@ function ChangePage(){
                 page[current].style.animationDelay = '0s'
                 page[current].style.animationName = 'anim4'
                 setTimeout(()=>{
-                    page[current].style.display = 'none'
+                    page[index].style.display = 'none'
                 },300)
                 if (index === 0) {
                     page[0].style.animationDelay = '0.3s'
