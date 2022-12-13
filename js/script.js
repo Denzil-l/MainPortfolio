@@ -1,4 +1,6 @@
 
+
+
 const mainButtons = document.querySelectorAll('.nav-item')
 const hexagon1 = document.querySelector('.hexone')
 const hexagon2 = document.querySelector('.hextwo')
@@ -55,7 +57,7 @@ function ChangePage(){
                 
                 break;
             case i === 2:
-                NewOpacity(contcacts)
+                
                 break;
             case i === 3:
                 NewOpacity(stacks)

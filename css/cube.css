@@ -1,0 +1,235 @@
+@import url(https://fonts.googleapis.com/css?family=Silkscreen:regular,700);
+@import url(https://fonts.googleapis.com/css?family=Silkscreen:regular,700);
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+.xx{}
+*, *::before, *::after {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  list-style: none;
+  font-family: Silkscreen;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a.a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+body {
+  background: rgba(40, 0, 241, 0.671);
+}
+
+.cube-shirma {
+  position: absolute;
+  width: 301px;
+  height: 301px;
+  z-index: 10;
+  overflow: hidden;
+  /* border-radius: 15px; */
+  animation-name: none;
+  animation-timing-function: linear;
+  animation-duration: 1s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+}
+
+
+.cube {
+  position: absolute;
+  z-index: 5;
+  width: 300px;
+  height: 300px;
+  -webkit-transition: 5s;
+  transition: 5s;
+  -webkit-animation: rotation 5s linear infinite;
+          animation: rotation 5s linear infinite;
+  background-color: blue;
+  /* border-radius: 15px; */
+  overflow: hidden;
+}
+
+.cube div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transition: 1s;
+  transition: 1s;
+  -webkit-animation: rotate 3s linear infinite;
+          animation: rotate 3s linear infinite;
+  z-index: 4;
+}
+
+.cube:hover .big span {
+  background: transparent;
+  /* border: 10px  solid blue; */
+  -webkit-filter: drop-shadow(0 0 20px blue);
+          filter: drop-shadow(0 0 20px blue);
+}
+
+.cube .big span {
+  z-index: 3;
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transition: 4s;
+  transition: 4s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-family: Silkscreen;
+  font-size: 30px;
+  letter-spacing: 8px;
+  background-color: rgba(2, 29, 237, 0.495);
+  text-shadow: 0px 1px 17px black;
+}
+
+.cube .big span a {
+  text-decoration: none;
+  color: black;
+}
+
+.cube .big span a:active {
+  color: blue;
+}
+
+.cube .big span:hover {
+  cursor: pointer;
+  background-color: rgba(25, 0, 255, 0.842);
+}
+
+.cube .big span.top {
+  -webkit-transition: 4s;
+  transition: 4s;
+}
+
+.cube .big span.bottom {
+  background-color: rgba(25, 0, 255, 0.842);
+  -webkit-transition: 5s;
+  transition: 5s;
+}
+
+.link-three {
+  position: absolute;
+  z-index: 4;
+}
+
+.openCube {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* border-radius: 15px; */
+  cursor: pointer;
+  -webkit-transition: 5s;
+  transition: 5s;
+  background: blue;
+  background: radial-gradient(circle, blue 0%, #0d9aff 54%, #0d9aff 100%);
+  border: 5px solid #0d9aff;
+  font-size: 25px;
+}
+
+@media (max-width: 600px) {
+  .cube {
+    width: 150px;
+    height: 150px;
+  }
+  .cube .big span {
+    width: 150px;
+    height: 150px;
+    font-size: 18px;
+    letter-spacing: 4px;
+  }
+}
+
+@keyframes animopac{
+  0%{opacity: 1;}
+  100%{opacity: 0;}
+}
+
+
+/* 
+<div class="cube-shirma">
+      <button class="openCube">click on me</button>
+
+    </div>
+    <div class="cube">
+      <div class="big">
+        <span class="one" style="--i:0;">
+                  <a target="_blank" href="https://github.com/Denzil-l" class="link-one"></a></span>
+        <span class="two" style="--i:1; ">
+          <a target="_blank" href="https://www.linkedin.com/in/denis-shukhat-234343250/" class="link-two"></a></span>         
+        </span>
+        <span style="--i:2;"></span>
+        <span style="--i:3;"></span>
+        <span class="top">
+          <a target="_blank" href="mailto:denissuhart1@gmail.com
+          " class="link-three"></a></span>
+        <span class="bottom"> </span>
+        
+      </div>
+    </div> */
+
+
