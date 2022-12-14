@@ -1108,3 +1108,10 @@ a {
   top: 33%;
   left: 80%;
 }
+
+.position-right img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: left;
+     object-position: left;
+}

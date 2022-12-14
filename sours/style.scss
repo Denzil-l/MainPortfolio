@@ -520,3 +520,9 @@ a {
 &__stacks:nth-child(5){top: 66%; left: 80%;}
 &__stacks:nth-child(6){top: 33%; left: 80%;}
 }
+
+
+.position-right img{
+  object-fit: cover;
+  object-position: left;
+}
