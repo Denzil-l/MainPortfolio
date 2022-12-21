@@ -1128,3 +1128,10 @@ a {
   -o-object-position: top;
      object-position: top;
 }
+
+.number7 img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: top;
+     object-position: top;
+}

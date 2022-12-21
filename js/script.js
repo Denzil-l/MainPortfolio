@@ -138,7 +138,7 @@ BigButton.addEventListener('click', ()=>{
     if(Button.className === 'closeSpan'){Button.className = 'openSpan'}else{Button.className = 'closeSpan'}
     
 })
-for (let i = 0; i < 6; i++) {
+for (let i = 0; i < 7; i++) {
     boxes[i].addEventListener('mouseover', ()=>{
         console.log(Top[i])
         Top[i].style.height ="100%"
